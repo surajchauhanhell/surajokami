@@ -46,9 +46,9 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: faGithub, url: 'https://github.com/surajchauhanhell', label: 'GitHub' },
-    { icon: faLinkedin, url: 'https://linkedin.com/in/suraj', label: 'LinkedIn' },
-    { icon: faInstagram, url: 'https://instagram.com/suraj', label: 'Instagram' },
-    { icon: faTwitter, url: 'https://twitter.com/suraj', label: 'Twitter' },
+    { icon: faLinkedin, url: 'https://www.linkedin.com/in/surajdigitalcreator?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', label: 'LinkedIn' },
+    { icon: faInstagram, url: 'https://www.instagram.com/surajokami?igsh=M3JyZHEyNWI1MGQ4', label: 'Instagram' },
+    { icon: faTwitter, url: 'https://x.com/Xtrade_suraj?s=09', label: 'Twitter' },
   ];
 
   return (
