@@ -17,7 +17,7 @@ const Projects = () => {
       description: 'A comprehensive Flutter application integrated with Firebase and Excel API for seamless data management and synchronization.',
       tags: ['Flutter', 'Firebase', 'Excel API', 'Mobile'],
       liveDemo: 'https://drive.google.com/file/d/1ynXTbUcDppeftjsAshEiGOG_9GGtIeg1/view',
-      source: 'https://drive.google.com/drive/folders/1A02BPUmdvdeDiqoKod4mHU6qfw7ERfTI',
+      source: 'https://github.com/surajchauhanhell/onexpertsheet',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
