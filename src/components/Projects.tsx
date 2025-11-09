@@ -5,6 +5,14 @@ import { faExternalLinkAlt, faCode } from '@fortawesome/free-solid-svg-icons';
 const Projects = () => {
   const projects = [
     {
+      title: 'PortBuild',
+      description: 'No coding required! Build stunning, professional portfolios and resumes with our intuitive builder. Create your portfolio in minutes and export as ready-to-deploy HTML files instantly.',
+      tags: ['Portfolio Builder', 'Web Builder', 'HTML Export', 'Productivity'],
+      liveDemo: 'https://portbuild-mauve.vercel.app/',
+      source: 'https://github.com/surajchauhanhell/PortBuild',
+      gradient: 'from-indigo-500 to-blue-500',
+    },
+    {
       title: 'OneXpertSheet',
       description: 'A comprehensive Flutter application integrated with Firebase and Excel API for seamless data management and synchronization.',
       tags: ['Flutter', 'Firebase', 'Excel API', 'Mobile'],
