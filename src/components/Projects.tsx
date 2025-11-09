@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = () => {
   const projects = [
@@ -118,15 +118,31 @@ const Projects = () => {
                       <span>Live Demo</span>
                       <FontAwesomeIcon icon={faExternalLinkAlt} />
                     </a>
-                    <a
-                      href={project.source}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
-                      aria-label="View source code"
-                    >
-                      <FontAwesomeIcon icon={faCode} />
-                    </a>
+                    {project.source ? (
+                      <a
+                        href={project.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
+                        aria-label="View source code"
+                      >
+                        <FontAwesomeIcon icon={faCode} />
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          const element = document.querySelector('#contact');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                        className="flex items-center justify-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
+                        aria-label="Contact developer for source code"
+                        title="Contact developer for source code"
+                      >
+                        <FontAwesomeIcon icon={faEnvelope} />
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
