@@ -53,41 +53,41 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="text-white"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Hi, I'm Suraj <span className="inline-block animate-wave">👋</span>
             </h1>
 
-            <div className="text-2xl md:text-3xl mb-6 h-12">
+            <div className="text-xl sm:text-2xl md:text-3xl mb-6 h-12 min-h-12">
               <span ref={typedRef}></span>
             </div>
 
-            <p className="text-lg md:text-xl mb-8 text-gray-100">
+            <p className="text-base sm:text-lg md:text-xl mb-8 text-gray-100 leading-relaxed">
               Turning innovative ideas into real-world applications that make a difference.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 mb-8">
               <button
                 onClick={scrollToContact}
-                className="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="px-6 sm:px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 active:bg-gray-200 transform hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl touch-target"
               >
                 Contact Me
               </button>
               <a
                 href="#"
-                className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-300"
+                className="px-6 sm:px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 active:bg-gray-200 active:text-blue-600 transform hover:scale-105 active:scale-95 transition-all duration-300 touch-target text-center"
               >
                 Download CV
               </a>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-110"
+                  className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full hover:bg-white hover:text-blue-600 active:bg-blue-200 active:text-blue-700 transition-all duration-300 transform hover:scale-110 active:scale-95 touch-target"
                   aria-label={social.label}
                 >
                   <FontAwesomeIcon icon={social.icon} size="lg" />
@@ -100,14 +100,15 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex justify-center"
+            className="flex justify-center mt-8 md:mt-0"
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-3xl opacity-50 animate-pulse"></div>
               <img
                 src={itsmeImage}
                 alt="Suraj"
-                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-8 border-white/20 shadow-2xl"
+                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full object-cover border-4 sm:border-6 md:border-8 border-white/20 shadow-2xl"
+                loading="lazy"
               />
             </div>
           </motion.div>
