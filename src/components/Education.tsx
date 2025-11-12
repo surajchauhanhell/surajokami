@@ -6,11 +6,11 @@ const Education = () => {
   const educationData = [
     {
       type: 'degree',
-      title: 'B.Tech in Computer Science',
+      title: 'B.Sc. in Computer Science',
       institution: 'SICES College',
       period: '2023 - 2026',
       icon: faGraduationCap,
-      description: 'Pursuing Bachelor of Technology with focus on software development and emerging technologies.',
+      description: 'Pursuing Bachelor of Science with focus on software development and emerging technologies.',
     },
     {
       type: 'certificate',
