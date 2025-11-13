@@ -73,7 +73,9 @@ const Hero = () => {
                 Contact Me
               </button>
               <a
-                href="#"
+                href="https://drive.google.com/file/d/1sxyeyFzJ79c_UcLqoruUheyqSM3rexb7/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 active:bg-gray-200 active:text-blue-600 transform hover:scale-105 active:scale-95 transition-all duration-300 touch-target text-center"
               >
                 Download CV
