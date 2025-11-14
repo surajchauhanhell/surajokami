@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -30,36 +29,19 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-          data-aos="fade-up"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Client Testimonials
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             What clients say about working with me
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
+          {testimonials.map((testimonial) => (
+            <div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{
-                y: -10,
-                transition: { duration: 0.3 }
-              }}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
               className="relative group"
             >
               <div className="h-full bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8">
@@ -78,6 +60,7 @@ const Testimonials = () => {
                     src={testimonial.avatar}
                     alt={testimonial.name}
                     className="w-14 h-14 rounded-full object-cover border-2 border-blue-500"
+                    loading="lazy"
                   />
                   <div>
                     <h4 className="font-bold text-gray-900 dark:text-white">
@@ -89,7 +72,7 @@ const Testimonials = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

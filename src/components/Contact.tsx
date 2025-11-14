@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapMarkerAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -54,31 +53,17 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-          data-aos="fade-up"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             Have a project in mind? Let's work together!
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            data-aos="fade-right"
-            className="space-y-8"
-          >
+          <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Contact Information
@@ -119,7 +104,7 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg"
+                    className="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white transition-all duration-200 shadow-lg touch-target"
                     aria-label={social.label}
                   >
                     <FontAwesomeIcon icon={social.icon} />
@@ -127,15 +112,9 @@ const Contact = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            data-aos="fade-left"
-          >
+          <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input
@@ -187,23 +166,19 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl hover:opacity-90 transition-all duration-200 flex items-center justify-center space-x-2 touch-target"
               >
                 <span>Send Message</span>
                 <FontAwesomeIcon icon={faPaperPlane} />
               </button>
 
               {status && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-green-500 text-center font-medium"
-                >
+                <p className="text-green-500 text-center font-medium">
                   {status}
-                </motion.p>
+                </p>
               )}
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

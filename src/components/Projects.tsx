@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -49,43 +48,26 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-          data-aos="fade-up"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My Projects
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             Some of the projects I've worked on recently
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
+          {projects.map((project) => (
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{
-                y: -15,
-                transition: { duration: 0.3 }
-              }}
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
               className="group relative"
             >
               <div className="h-full bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
                 <div className={`h-2 bg-gradient-to-r ${project.gradient}`}></div>
 
                 <div className="p-6">
-                  <div className={`w-16 h-16 mb-4 bg-gradient-to-r ${project.gradient} rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 mb-4 bg-gradient-to-r ${project.gradient} rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
                     <FontAwesomeIcon icon={faCode} className="text-white text-2xl" />
                   </div>
 
@@ -93,7 +75,7 @@ const Projects = () => {
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 min-h-[80px]">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 min-h-[80px] leading-relaxed">
                     {project.description}
                   </p>
 
@@ -113,7 +95,7 @@ const Projects = () => {
                       href={project.liveDemo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex-1 flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r ${project.gradient} text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
+                      className={`flex-1 flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r ${project.gradient} text-white rounded-lg font-medium hover:shadow-lg hover:opacity-90 transition-all duration-200 touch-target`}
                     >
                       <span>Live Demo</span>
                       <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -123,7 +105,7 @@ const Projects = () => {
                         href={project.source}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
+                        className="flex items-center justify-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 hover:opacity-90 transition-all duration-200 touch-target"
                         aria-label="View source code"
                       >
                         <FontAwesomeIcon icon={faCode} />
@@ -136,7 +118,7 @@ const Projects = () => {
                             element.scrollIntoView({ behavior: 'smooth' });
                           }
                         }}
-                        className="flex items-center justify-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
+                        className="flex items-center justify-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 hover:opacity-90 transition-all duration-200 touch-target"
                         aria-label="Contact developer for source code"
                         title="Contact developer for source code"
                       >
@@ -146,7 +128,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
