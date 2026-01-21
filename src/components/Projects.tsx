@@ -1,130 +1,166 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt, faCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faPlay, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+
   const projects = [
     {
       title: 'PortBuild',
-      description: 'No coding required! Build stunning, professional portfolios and resumes with our intuitive builder. Create your portfolio in minutes and export as ready-to-deploy HTML files instantly.',
-      tags: ['Portfolio Builder', 'Web Builder', 'HTML Export', 'Productivity'],
+      description: 'No coding required! Build stunning, professional portfolios and resumes with our intuitive builder.',
+      tags: ['Portfolio Builder', 'Productivity'],
       liveDemo: 'https://portbuild-mauve.vercel.app/',
       source: 'https://github.com/surajchauhanhell/PortBuild',
-      gradient: 'from-neon-purple',
-      textColor: 'text-neon-purple',
+      category: 'Web Application',
+      image: 'https://placehold.co/600x400/1a1a1a/bd00ff?text=PortBuild+Preview', // Placeholder
+      gradient: 'from-purple-600 to-blue-600',
     },
     {
       title: 'OneXpertSheet',
-      description: 'A comprehensive Flutter application integrated with Firebase and Excel API for seamless data management and synchronization.',
-      tags: ['Flutter', 'Firebase', 'Excel API', 'Mobile'],
+      description: 'Comprehensive Flutter app integrated with Firebase and Excel API for seamless data sync.',
+      tags: ['Flutter', 'Firebase', 'Mobile'],
       liveDemo: 'https://drive.google.com/file/d/1ynXTbUcDppeftjsAshEiGOG_9GGtIeg1/view',
       source: 'https://github.com/surajchauhanhell/onexpertsheet',
-      gradient: 'from-blue-500',
-      textColor: 'text-blue-500',
+      category: 'Mobile Application',
+      image: 'https://placehold.co/600x400/1a1a1a/3b82f6?text=OneXpertSheet+Preview', // Placeholder
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       title: 'Trendora',
-      description: 'An elegant e-commerce platform built with modern web technologies, featuring smooth animations and responsive design.',
-      tags: ['HTML', 'CSS', 'JavaScript', 'E-commerce'],
+      description: 'Elegant e-commerce platform with modern web technologies and smooth animations.',
+      tags: ['E-commerce', 'React'],
       liveDemo: 'https://trendora-shop-elegance.vercel.app/',
       source: 'https://github.com/surajchauhanhell/trendora-shop-elegance',
-      gradient: 'from-neon-pink', // was pink-500
-      textColor: 'text-neon-pink',
+      category: 'Web Application',
+      image: 'https://placehold.co/600x400/1a1a1a/ec4899?text=Trendora+Preview', // Placeholder
+      gradient: 'from-pink-500 to-rose-500',
     },
     {
       title: 'ShadowOkami',
-      description: 'An innovative React application powered by AI/ML technologies, delivering intelligent and interactive user experiences.',
-      tags: ['React', 'AI/ML', 'Modern UI', 'Web'],
+      description: 'Innovative React app powered by AI/ML technologies for intelligent user experiences.',
+      tags: ['AI/ML', 'React'],
       liveDemo: 'https://shadowokami.vercel.app/',
       source: 'https://github.com/surajchauhanhell/shadowokami',
-      gradient: 'from-red-500',
-      textColor: 'text-red-500',
+      category: 'Web Application',
+      image: 'https://placehold.co/600x400/1a1a1a/ef4444?text=ShadowOkami+Preview', // Placeholder
+      gradient: 'from-red-500 to-orange-500',
     },
     {
       title: 'DeepPath',
-      description: 'Advanced AI/ML solution for deepfake detection, helping identify manipulated media with high accuracy and reliability.',
-      tags: ['AI/ML', 'Detection', 'Security', 'Python'],
+      description: 'Advanced deepfake detection solution identifying manipulated media with high accuracy.',
+      tags: ['AI/ML', 'Python'],
       liveDemo: 'https://deeppathokami.vercel.app/',
       source: 'https://github.com/surajchauhanhell/DeepPath',
-      gradient: 'from-green-500',
-      textColor: 'text-green-500',
+      category: 'Web Application',
+      image: 'https://placehold.co/600x400/1a1a1a/10b981?text=DeepPath+Preview', // Placeholder
+      gradient: 'from-emerald-500 to-green-500',
     },
   ];
+
+  const categories = ['All', 'Web Application', 'Mobile Application'];
+
+  const filteredProjects = activeCategory === 'All'
+    ? projects
+    : projects.filter(project => project.category === activeCategory);
 
   return (
     <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-8">
             My Projects
           </h2>
-          <div className="w-24 h-1 bg-neon-purple mx-auto rounded-full shadow-neon"></div>
+
+          {/* Category Filter */}
+          <div className="flex justify-center gap-4 flex-wrap">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-2 rounded-full border transition-all duration-300 ${activeCategory === category
+                  ? 'bg-gradient-to-r from-neon-purple to-neon-pink text-white border-transparent shadow-neon'
+                  : 'bg-transparent text-gray-400 border-gray-700 hover:border-gray-500'
+                  }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="glass rounded-2xl overflow-hidden hover:border-neon-purple/50 transition-all duration-300 group flex flex-col"
-            >
-              {/* Top Gradient Bar */}
-              <div className={`h-1.5 w-full bg-gradient-to-r ${project.gradient} to-purple-600`}></div>
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence>
+            {filteredProjects.map((project) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                key={project.title}
+                className="glass rounded-2xl overflow-hidden hover:border-neon-purple/50 transition-all duration-300 group flex flex-col border border-white/5"
+              >
+                {/* Image Placeholder area */}
+                <div className="h-48 w-full relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className={`w-full h-full bg-gradient-to-br ${project.gradient}`}></div>
+                  )}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                </div>
 
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-neon-purple transition-colors">
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-purple transition-colors">
                     {project.title}
                   </h3>
-                  <FontAwesomeIcon icon={faCode} className={`${project.textColor} text-xl`} />
-                </div>
 
-                <p className="text-gray-300 mb-6 leading-relaxed flex-1">
-                  {project.description}
-                </p>
+                  <p className="text-gray-400 text-sm mb-6 leading-relaxed flex-1">
+                    {project.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-white/5 border border-white/10 text-gray-300 rounded-lg text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                  <div className="flex gap-4 mt-auto">
+                    {/* Repository Button */}
+                    {project.source ? (
+                      <a
+                        href={project.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-4 py-2.5 rounded-full border border-gray-600 text-white text-sm font-medium hover:border-neon-purple hover:bg-neon-purple/10 transition-all duration-300 flex items-center justify-center gap-2"
+                      >
+                        <span className="truncate">Repository</span>
+                        <FontAwesomeIcon icon={faGithub} />
+                      </a>
+                    ) : (
+                      <button className="flex-1 px-4 py-2.5 rounded-full border border-gray-700 text-gray-500 text-sm font-medium cursor-not-allowed flex items-center justify-center gap-2">
+                        <span>Private</span>
+                        <FontAwesomeIcon icon={faEnvelope} />
+                      </button>
+                    )}
 
-                <div className="flex items-center gap-4 mt-auto">
-                  <a
-                    href={project.liveDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 px-4 py-2 bg-neon-purple/10 border border-neon-purple/50 text-neon-purple rounded-lg text-center font-medium hover:bg-neon-purple hover:text-white transition-all duration-300"
-                  >
-                    Demo <FontAwesomeIcon icon={faExternalLinkAlt} className="ml-2 text-sm" />
-                  </a>
-
-                  {project.source ? (
+                    {/* Demo Button */}
                     <a
-                      href={project.source}
+                      href={project.liveDemo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 flex items-center justify-center border border-gray-600 text-gray-400 rounded-lg hover:border-white hover:text-white transition-all duration-300"
-                      aria-label="Source"
+                      className="flex-1 px-4 py-2.5 rounded-full bg-gradient-to-r from-neon-purple to-neon-pink text-white text-sm font-medium hover:shadow-neon hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2"
                     >
-                      <FontAwesomeIcon icon={faCode} />
+                      <span className="truncate">Demo</span>
+                      <FontAwesomeIcon icon={faPlay} className="text-xs" />
                     </a>
-                  ) : (
-                    <button
-                      className="w-10 h-10 flex items-center justify-center border border-gray-600 text-gray-400 rounded-lg cursor-not-allowed opacity-50"
-                      title="Private Source"
-                    >
-                      <FontAwesomeIcon icon={faEnvelope} />
-                    </button>
-                  )}
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
