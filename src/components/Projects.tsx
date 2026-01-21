@@ -4,6 +4,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faPlay, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import portbuildPreview from '../Assets/PortBuild.png';
+import trendoraPreview from '../Assets/Trendora.png';
+import deepPathPreview from '../Assets/DeepPath.png';
+import shadowOkamiPreview from '../Assets/ShadowOkami.png';
+
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState('All');
 
@@ -15,7 +20,7 @@ const Projects = () => {
       liveDemo: 'https://portbuild-mauve.vercel.app/',
       source: 'https://github.com/surajchauhanhell/PortBuild',
       category: 'Web Application',
-      image: 'https://placehold.co/600x400/1a1a1a/bd00ff?text=PortBuild+Preview', // Placeholder
+      image: portbuildPreview,
       gradient: 'from-purple-600 to-blue-600',
     },
     {
@@ -35,7 +40,7 @@ const Projects = () => {
       liveDemo: 'https://trendora-shop-elegance.vercel.app/',
       source: 'https://github.com/surajchauhanhell/trendora-shop-elegance',
       category: 'Web Application',
-      image: 'https://placehold.co/600x400/1a1a1a/ec4899?text=Trendora+Preview', // Placeholder
+      image: trendoraPreview,
       gradient: 'from-pink-500 to-rose-500',
     },
     {
@@ -45,7 +50,7 @@ const Projects = () => {
       liveDemo: 'https://shadowokami.vercel.app/',
       source: 'https://github.com/surajchauhanhell/shadowokami',
       category: 'Web Application',
-      image: 'https://placehold.co/600x400/1a1a1a/ef4444?text=ShadowOkami+Preview', // Placeholder
+      image: shadowOkamiPreview,
       gradient: 'from-red-500 to-orange-500',
     },
     {
@@ -55,7 +60,7 @@ const Projects = () => {
       liveDemo: 'https://deeppathokami.vercel.app/',
       source: 'https://github.com/surajchauhanhell/DeepPath',
       category: 'Web Application',
-      image: 'https://placehold.co/600x400/1a1a1a/10b981?text=DeepPath+Preview', // Placeholder
+      image: deepPathPreview,
       gradient: 'from-emerald-500 to-green-500',
     },
   ];
