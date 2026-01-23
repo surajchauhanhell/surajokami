@@ -8,11 +8,22 @@ import portbuildPreview from '../Assets/PortBuild.png';
 import trendoraPreview from '../Assets/Trendora.png';
 import deepPathPreview from '../Assets/DeepPath.png';
 import shadowOkamiPreview from '../Assets/ShadowOkami.png';
+import cakeBarPreview from '../Assets/Cakebar.png';
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const projects = [
+    {
+      title: 'The Cake Bar',
+      description: 'Custom cakes, desserts & sweet moments made with love at The Cake Bar.',
+      tags: ['React', 'Web App', 'Bakery'],
+      liveDemo: 'https://thecakebar.vercel.app/',
+      source: 'https://github.com/surajchauhanhell/Thecakebar',
+      category: 'Web Application',
+      image: cakeBarPreview,
+      gradient: 'from-yellow-400 to-orange-500',
+    },
     {
       title: 'PortBuild',
       description: 'No coding required! Build stunning, professional portfolios and resumes with our intuitive builder.',
