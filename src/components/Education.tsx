@@ -45,7 +45,7 @@ const Education = () => {
           {educationData.map((item, index) => (
             <div
               key={index}
-              className="glass p-8 rounded-2xl hover:border-neon-purple/50 transition-all duration-300 group"
+              className="glass p-6 md:p-8 rounded-2xl hover:border-neon-purple/50 transition-all duration-300 group"
             >
               <div className="w-16 h-16 mb-6 bg-neon-purple/20 rounded-2xl flex items-center justify-center text-neon-purple group-hover:scale-110 transition-transform duration-300">
                 <FontAwesomeIcon icon={item.icon} className="text-2xl" />

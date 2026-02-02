@@ -37,7 +37,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="glass p-8 rounded-2xl relative mt-8 hover:-translate-y-2 transition-transform duration-300"
+              className="glass p-6 md:p-8 rounded-2xl relative mt-6 md:mt-8 hover:-translate-y-2 transition-transform duration-300"
             >
               <div className="absolute -top-6 left-8 w-12 h-12 bg-neon-purple rounded-full flex items-center justify-center shadow-lg text-white">
                 <FontAwesomeIcon icon={faQuoteLeft} />

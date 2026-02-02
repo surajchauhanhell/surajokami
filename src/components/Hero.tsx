@@ -43,7 +43,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section id="hero" className="relative min-h-[100svh] flex items-center justify-center pt-24 pb-12 md:pt-20 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-neon-purple/5 blur-[120px] rounded-full"></div>
       <div className="absolute bottom-0 left-0 w-1/2 h-full bg-blue-600/5 blur-[120px] rounded-full"></div>
@@ -57,7 +57,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="order-2 md:order-1 flex flex-col items-start"
           >
-            <h2 className="text-neon-purple font-display text-lg sm:text-xl tracking-wider mb-2">Hello World!</h2>
+            <h2 className="text-neon-purple font-display text-lg tracking-wider mb-2">Hello World!</h2>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 font-display leading-tight">
               Hi, I'm <br />
               <span className="text-white text-glow">Suraj</span>
@@ -72,32 +72,34 @@ const Hero = () => {
               Crafting premium, user-centric and performance-friendly websites and apps with passion and precision.
             </p>
 
-            <div className="flex gap-4 mb-10">
-              <button
-                onClick={scrollToContact}
-                className="px-8 py-3 bg-neon-purple text-white rounded-full font-semibold hover:bg-neon-pink hover:shadow-neon transition-all duration-300 transform hover:-translate-y-1"
-              >
-                Let's Talk!
-              </button>
+            <div className="flex flex-col gap-4 mb-10 items-start">
+              <div className="flex gap-4 w-full sm:w-auto">
+                <button
+                  onClick={scrollToContact}
+                  className="flex-1 sm:flex-none px-8 py-3 bg-neon-purple text-white rounded-full font-semibold hover:bg-neon-pink hover:shadow-neon transition-all duration-300 transform hover:-translate-y-1 text-center justify-center flex"
+                >
+                  Let's Talk!
+                </button>
 
-              <a
-                href="https://drive.google.com/file/d/1sxyeyFzJ79c_UcLqoruUheyqSM3rexb7/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 border border-neon-purple text-white rounded-full font-semibold hover:bg-neon-purple/10 hover:shadow-neon transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2"
-              >
-                <span>Download CV</span>
-                <FontAwesomeIcon icon={faDownload} />
-              </a>
+                <a
+                  href="https://drive.google.com/file/d/1sxyeyFzJ79c_UcLqoruUheyqSM3rexb7/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 sm:flex-none px-6 py-3 border border-neon-purple text-white rounded-full font-semibold hover:bg-neon-purple/10 hover:shadow-neon transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                >
+                  <span>Download CV</span>
+                  <FontAwesomeIcon icon={faDownload} />
+                </a>
+              </div>
 
-              <div className="flex gap-3 items-center">
+              <div className="flex gap-4 items-center justify-start w-full sm:w-auto">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-neon-purple hover:text-neon-purple text-gray-400 transition-all duration-300"
+                    className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 hover:border-neon-purple hover:text-neon-purple text-gray-400 transition-all duration-300 text-lg"
                     aria-label={social.label}
                   >
                     <FontAwesomeIcon icon={social.icon} />
@@ -113,7 +115,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 md:order-2 flex justify-center md:justify-end relative"
           >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[450px] md:h-[450px]">
+            <div className="relative w-60 h-60 sm:w-80 sm:h-80 md:w-[450px] md:h-[450px]">
               {/* Circular glow behind */}
               <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-neon-purple to-neon-pink blur-[50px] opacity-60 animate-pulse"></div>
 

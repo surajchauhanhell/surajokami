@@ -69,7 +69,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden glass border-t border-white/10 safe-area-inset">
+        <div className="md:hidden glass border-t border-white/10 safe-area-inset backdrop-blur-xl bg-black/40">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
               <a
